@@ -1,2 +1,4 @@
-*.py~
+# compiled and temp files
+*~
+*.o
 *.pyc
