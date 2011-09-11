@@ -4,7 +4,7 @@ import java.io.FileReader;
 import java.io.IOException;
 import java.util.HashSet;
 
-public   class EulerUtil {
+public class EulerUtil {
 
     public static void printMatix(Integer[][] a) {
 
@@ -16,6 +16,21 @@ public   class EulerUtil {
             }
             System.out.println("");
         }
+    }
+
+    public static int sumOfAllDivisors(int x) {
+
+        Integer[] allDivisors = getAllDivisors(x);
+        int sum = 0;
+
+        for (int i = 0; i < allDivisors.length; i++) {
+            sum += allDivisors[i];
+
+        }
+
+        return sum;
+
+
     }
 
     public static Integer[] getAllDivisors(int x) {
@@ -53,7 +68,21 @@ public   class EulerUtil {
         }
 
         return content;
+    }
 
+    public static boolean isPrime(long x) {
+      
+        if ( x == 2 || x == 3 || x == 5) {
+            return true;
+        }
+  
 
+        for (int i = 2; i < (Math.sqrt(x) + 2); i++) {
+//            System.out.println(i);
+            if (x % i == 0) {
+                return false;
+            }
+        }
+        return true;
     }
 }
