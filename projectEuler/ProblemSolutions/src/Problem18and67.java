@@ -14,16 +14,16 @@ public class Problem18and67 {
             String line = br.readLine();
             while (line != null) {
                 String [] numbers = line.split(" ");
-                 
+
                 for (int j = 0; j < numbers.length; j++) {
                     String num = numbers[j];
                     table[i][j]=Integer.parseInt(num);
                 }
-                
-                
+
+
                 line=br.readLine();
                 i++;
-                
+
             }
 
         } catch (IOException ex) {

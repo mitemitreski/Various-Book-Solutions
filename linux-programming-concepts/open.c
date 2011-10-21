@@ -11,8 +11,8 @@
  *       Revision:  none
  *       Compiler:  gcc
  *
- *         Author:  YOUR NAME (), 
- *        Company:  
+ *         Author:  YOUR NAME (),
+ *        Company:
  *
  * =====================================================================================
  */
@@ -31,10 +31,10 @@
 #include    <sys/types.h>
 #include    <sys/stat.h>
 
-/* 
+/*
  * ===  FUNCTION  ======================================================================
  *         Name:  main
- *  Description:  
+ *  Description:
  * =====================================================================================
  */
     int
@@ -54,7 +54,7 @@ main ( int argc, char *argv[] )
    }
    else
    {
-    
+
 
    }
 

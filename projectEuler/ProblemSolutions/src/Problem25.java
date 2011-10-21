@@ -8,12 +8,12 @@ import java.math.BigInteger;
 public class Problem25 {
 
     /*
-     * 
+     *
     a=1
     b=1
     c=a+b
-    
-     * 
+
+     *
      */
     public static void main(String[] args) {
 
@@ -25,7 +25,7 @@ public class Problem25 {
             c = a.add(b);
             a = b;
             b = c;
-            
+
             if(c.toString().length()>=1000)break;
         index++;
         }

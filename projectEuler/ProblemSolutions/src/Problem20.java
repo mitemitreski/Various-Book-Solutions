@@ -1,6 +1,6 @@
 
 import java.math.BigInteger;
- 
+
 /**
  *
  * @author mite
@@ -10,7 +10,7 @@ public class Problem20 {
     public static void main(String[] args) {
         BigInteger num = BigInteger.ONE;
         for (int i = 1; i <= 100; i++) {
-            
+
 //          premature optimization :)
 //            if (num.mod(BigInteger.TEN).equals(BigInteger.ZERO)) {
 //                num=num.divide(BigInteger.TEN);
