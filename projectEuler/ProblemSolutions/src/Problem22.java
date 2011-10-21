@@ -46,7 +46,7 @@ public class Problem22 {
             }
             totalSum += (numValFrom(element) * (i + 1));
 
- 
+
 
         }
         System.out.println("totalSum " + totalSum);

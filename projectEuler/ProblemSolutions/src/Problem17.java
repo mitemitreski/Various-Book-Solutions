@@ -3,11 +3,11 @@ import java.util.HashMap;
 
 /**
  *
- * 
- * NOTE 
- * 
- *  THERE IS A LOT SMARTER SOLUTION TO THIS BUT THIS WAS MINE so 
- *  Also the map can be smaller but I made a lot of speling errors so 
+ *
+ * NOTE
+ *
+ *  THERE IS A LOT SMARTER SOLUTION TO THIS BUT THIS WAS MINE so
+ *  Also the map can be smaller but I made a lot of speling errors so
  * @author mite
  */
 public class Problem17 {
@@ -102,6 +102,6 @@ public class Problem17 {
         out += map.get(1000) + "\n";
 //        System.out.println(out); // to test  the string output
         System.out.println(out.replaceAll("\n", "").length());
-       
+
     }
 }

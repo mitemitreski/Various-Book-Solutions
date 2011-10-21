@@ -19,7 +19,7 @@ public class Problem19 {
                     count++;
                 }
             }
-         
+
 
         }
            System.out.println(count);
