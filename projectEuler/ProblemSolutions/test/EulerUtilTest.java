@@ -13,11 +13,11 @@ import static org.junit.Assert.*;
  * @author mite
  */
 public class EulerUtilTest {
-    
+
     public EulerUtilTest() {
     }
 
-    
+
 
     @Test
     public void testIsPrime() {
@@ -26,6 +26,6 @@ public class EulerUtilTest {
         boolean expResult = false;
         boolean result = EulerUtil.isPrime(2021);
         assertEquals(expResult, result);
- 
+
     }
 }

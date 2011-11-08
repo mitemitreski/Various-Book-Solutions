@@ -71,11 +71,11 @@ public class EulerUtil {
     }
 
     public static boolean isPrime(long x) {
-      
+
         if ( x == 2 || x == 3 || x == 5) {
             return true;
         }
-  
+
 
         for (int i = 2; i < (Math.sqrt(x) + 2); i++) {
 //            System.out.println(i);

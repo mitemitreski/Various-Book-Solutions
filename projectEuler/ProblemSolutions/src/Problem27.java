@@ -5,7 +5,7 @@
  */
 public class Problem27 {
     /*
-     * 
+     *
     n^2+ a*n+b
      */
 
@@ -18,7 +18,7 @@ public class Problem27 {
                 for (int n = 0; n <= 800; n++) {
 
                     long expresion = n * n + a * n + b;
-                
+
 
                     if (!EulerUtil.isPrime(Math.abs(expresion))) {
                         if (maxN < (n - 1)) {

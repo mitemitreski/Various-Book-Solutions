@@ -4,8 +4,8 @@ import java.util.Arrays;
 public class Problem24 {
 
     /*
-    
-     * 
+
+     *
      *
      * NextPermutation(a1a2...an; permutation of {1, 2,..., n} != to n, (n-1),...2, 1)
     {
@@ -24,7 +24,7 @@ public class Problem24 {
     r = r - 1;
     s = s + 1;
     }
-    
+
      */
     public static void nextPermuatation(int[] a) {
         int j = a.length - 2;

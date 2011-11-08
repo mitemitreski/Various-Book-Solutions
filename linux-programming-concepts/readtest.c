@@ -3,15 +3,15 @@
  *
  *       Filename:  readtest.c
  *
- *    Description:  
+ *    Description:
  *
  *       Version:  1.0
  *        Created:  04/09/2011 06:39:19 PM
  *       Revision:  none
  *       Compiler:  gcc
  *
- *         Author:  YOUR NAME (), 
- *        Company:  
+ *         Author:  YOUR NAME (),
+ *        Company:
  *
  * =====================================================================================
  */
@@ -25,10 +25,10 @@
 #include    <fcntl.h>
 
 
-/* 
+/*
  * ===  FUNCTION  ======================================================================
  *         Name:  main
- *  Description:  
+ *  Description:
  * =====================================================================================
  */
     int
@@ -41,7 +41,7 @@ main ( int argc, char *argv[] )
   ssize_t ret;
 
   char *buf=malloc(sizeof(char));
-  
+
   while(((ret=read(fd, buf, sizeof(char)))!=0)){
     if(ret==-1){
         if(errno==EINTR) continue;
