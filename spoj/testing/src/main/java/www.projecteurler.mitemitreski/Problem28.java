@@ -1,51 +1,86 @@
-package com.mitemitreski.www;
+package www.projecteurler.mitemitreski;
 
-import com.mitemitreski.www.EulerUtil;
+import www.projecteurler.mitemitreski.EulerUtil;
+
+import static www.projecteurler.mitemitreski.Problem28.Direction.*;
 
 /**
  * Spiral matirx fill
  */
 public class Problem28 {
-  enum Direction {
-    DOWN, RIGHT, UP, LEFT;
-  }
+    enum Direction {
+        DOWN, RIGHT, UP, LEFT;
 
-  //brute force
-  public static void main(String[] args) {
-    int N = 5;
-    Integer[][] matrix = new Integer[N][N];
-    //form a spiral
-    EulerUtil.printMatix(matrix);
-    int i = 0;
-    int j = 0;
-    int count = N * N;
-    Direction direction = Direction.DOWN;
-    while (i != N / 2 - 1 && j != N / 2 - 1) {
-      matrix[i][j] = count;
-      count++;
-      if (direction == Direction.RIGHT) {
-        i++;
-      } else if (direction == Direction.DOWN) {
-        j++;
-      } else if (direction == Direction.LEFT) {
-        i--;
-      } else if (direction == Direction.UP) {
-        j--;
-      }
-
-      //TODO not finished
+        public final Direction next() {
+            if (this == RIGHT) return DOWN;
+            if (this == DOWN) return LEFT;
+            if (this == LEFT) return UP;
+            if (this == UP) return RIGHT;
+            return this;
+        }
     }
 
-    System.out.println("----------------------------");
+    //brute force
+    public static void main(String[] args) {
+        int N = 1001;
+        int maxNumber = N * N;
+        int[][] matrix = new int[N ][N ];
+        int count = 2;
+        int i = N / 2;
+        int j = (N / 2) + 1;
+        matrix[N / 2][N / 2] = 1;
 
-    EulerUtil.printMatix(matrix);
-    //calculate diagonal
+        int currentSpiralLength = 1;
+        Direction currentDirecton = DOWN;
+        while (count <= maxNumber) {
+            int lenthLeftToWrite = currentSpiralLength;
+            while (lenthLeftToWrite-- > 0) {
+                matrix[i][j] = count;
+                count++;
+                if (currentDirecton == RIGHT) {
+                    j++;
+                } else if (currentDirecton == DOWN) {
+                    i++;
+                } else if (currentDirecton == LEFT) {
+                    j--;
+                } else if (currentDirecton == UP) {
+                    i--;
+                }
+//                EulerUtil.printMatix(matrix);
+//                System.out.println("--------- ");
+//                System.out.println("count=" + count + "||" + currentDirecton + "|| current spiral=" + currentSpiralLength);
+//                System.out.println("--------- ");
+            }
+            currentDirecton = currentDirecton.next();
+            if (currentDirecton == LEFT || currentDirecton == RIGHT) currentSpiralLength++;
 
 
-    int sum = 0;
-  }
+//            EulerUtil.printMatix(matrix);
+//            System.out.println("---NEXT turn------ ");
+//            System.out.println("count=" + count + "||" + currentDirecton + "|| current spiral=" + currentSpiralLength);
+//            System.out.println("---NEXT------ ");
 
-  private static Direction newDirection(Direction direction) {
-    return direction;
-  }
+        }
+
+        EulerUtil.printMatix(matrix);
+        //calculate diagonal
+
+
+        int sum = 0;
+        for (int x = 0; x < N; x++) {
+            //left diagonal
+            sum += matrix[x][x];
+            //right diagonal
+            sum+=matrix[x][N-x-1];
+        }
+        //
+        sum-=1;
+
+
+        System.out.println("The sum is " + sum);
+    }
+
+    private static Direction newDirection(Direction direction) {
+        return direction;
+    }
 }

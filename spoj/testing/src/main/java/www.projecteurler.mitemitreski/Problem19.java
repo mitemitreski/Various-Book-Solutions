@@ -1,4 +1,4 @@
-package com.mitemitreski.www;
+package www.projecteurler.mitemitreski;
 
 import java.util.Calendar;
 

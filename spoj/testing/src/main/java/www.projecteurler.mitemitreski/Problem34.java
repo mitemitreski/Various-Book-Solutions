@@ -1,7 +1,7 @@
-package com.mitemitreski.www;
+package www.projecteurler.mitemitreski;
 
 import com.google.common.collect.Maps;
-import com.mitemitreski.www.EulerUtil;
+import www.projecteurler.mitemitreski.EulerUtil;
 
 import java.util.Map;
 

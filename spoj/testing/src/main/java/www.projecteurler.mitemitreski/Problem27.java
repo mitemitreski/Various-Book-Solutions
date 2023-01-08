@@ -1,4 +1,4 @@
-import com.mitemitreski.www.EulerUtil;
+import www.projecteurler.mitemitreski.EulerUtil;
 
 /**
  * @author mite

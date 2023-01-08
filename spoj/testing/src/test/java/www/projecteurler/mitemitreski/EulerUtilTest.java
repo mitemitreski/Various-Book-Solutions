@@ -1,6 +1,5 @@
 package www.projecteurler.mitemitreski;
 
-import com.mitemitreski.www.EulerUtil;
 import org.junit.Test;
 
 import static org.junit.Assert.assertFalse;
