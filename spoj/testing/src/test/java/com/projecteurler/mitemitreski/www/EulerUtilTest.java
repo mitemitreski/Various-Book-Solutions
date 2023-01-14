@@ -24,7 +24,10 @@ public class EulerUtilTest {
 
     @Test
     public void permuteTest() {
-        System.out.println(EulerUtil.permutation("ABC"));
+
+      assertTrue(EulerUtil.permutation("123456").size()==720);
 
     }
+
+
 }

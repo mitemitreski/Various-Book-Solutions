@@ -1,6 +1,7 @@
 package com.projecteurler.mitemitreski.www;
 
 import java.util.HashSet;
+import java.util.List;
 import java.util.Set;
 
 /**
@@ -9,42 +10,32 @@ import java.util.Set;
 public class Problem35 {
 
 
-  public static void main(String[] args) {
-
-    int countAll = 0;
-    outter:
-    for (int i = 2; i < 1000000; i++) {
-      if (EulerUtil.isPrime(i)) {
-        String str = i + "";
-        if (i > 10 && (str.contains("2") || str.contains("4") || str.contains("0"))) {
-          continue;
-
+    public static void main(String[] args) {
+        int countAll = 0;
+        List<Integer> primes = EulerUtil.primeListToNum(1000000);
+        System.out.println("total primes "+ primes.size());
+        for (Integer prime : primes) {
+            Set<Integer> allRotations = generateAllDigitVariations(prime);
+            boolean allPermutationsWerePrime = primes.containsAll(allRotations);
+            if (allPermutationsWerePrime) {
+                //it is a circular prime
+                System.out.println("++++++  " + prime);
+                countAll++;
+            }
         }
-        Set<Long> allPermutations = generateAllDigitVariations(str);
-        for (Long permutation : allPermutations) {
-          if (!EulerUtil.isPrime(permutation)) {
-            continue outter;
-          }
-        }
-        //it is a circular prime
-        System.out.println("--" + i);
-        countAll++;
+        System.out.println("count is " + countAll);
+    }
 
-      }
+    public static Set<Integer> generateAllDigitVariations(Integer number) {
+        String str = number + "";
+        Set<Integer> out = new HashSet<>();
+        Set<String> all = EulerUtil.allRotationsOnAString(str);
+        for (String rotation : all) {
+            out.add(Integer.valueOf(rotation));
+        }
+        return out;
 
     }
-    System.out.println(countAll);
-  }
-
-  public static Set<Long> generateAllDigitVariations(String str) {
-    Set<Long> out = new HashSet<>();
-    Set<String> all = EulerUtil.permutation(str);
-    for (String permutation : all) {
-      out.add(Long.valueOf(permutation));
-    }
-    return out;
-
-  }
 
 
 }

@@ -1,5 +1,7 @@
 package com.projecteurler.mitemitreski.www;
 
+import com.google.common.collect.Sets;
+
 import java.io.BufferedReader;
 import java.io.FileReader;
 import java.io.IOException;
@@ -19,7 +21,7 @@ public class EulerUtil {
         }
     }
 
-    public static  void printMatix(int[][] a) {
+    public static void printMatix(int[][] a) {
         for (int i = 0; i < a.length; i++) {
             for (int j = 0; j < a[i].length; j++) {
                 System.out.print(a[i][j] + " ");
@@ -78,7 +80,7 @@ public class EulerUtil {
         return content;
     }
 
-    public static final int SEED_LIMIT = 100001;
+    public static final int SEED_LIMIT = 1000001;
     public static BitSet primesSeed = primesSeed(SEED_LIMIT);
 
 
@@ -163,6 +165,16 @@ public class EulerUtil {
         return true;
     }
 
+
+    public static Set<String> allRotationsOnAString(String input) {
+        Set<String> output = new TreeSet<>();
+        int len = input.length();
+        for (int i = 0; i < len; i++) {
+            String rotated = input.substring(i) + input.substring(0, i);
+            output.add(rotated);
+        }
+        return output;
+    }
 
     public static Set<String> permutation(String str) {
         Set<String> permutations = new HashSet<>();
